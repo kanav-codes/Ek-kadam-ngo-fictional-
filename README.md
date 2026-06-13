@@ -1,10 +1,10 @@
-# Nayepankh Organization — NGO Engagement Workflow
+# Ek kadam Organization — NGO Engagement Workflow
 
 A no-code engagement webpage and workflow for an NGO, covering volunteer
 recruitment, donations, and event participation in a single connected page.
 
 ## Live Demo
-https://kanav-codes.github.io/nayepankh-ngo/
+https://kanav-codes.github.io/Ek kadam-ngo/
 
 ## Features
 
@@ -42,5 +42,5 @@ https://kanav-codes.github.io/nayepankh-ngo/
 
 This project was built with the assistance of AI tools as part of a no-code
 development task. The webpage (HTML/CSS/JS) was AI-generated and customized
-for Nayepankh Organization's branding and content. Google Forms and Sheets
+for Ek kadam Organization's branding and content. Google Forms and Sheets
 were set up manually to handle real data capture.
