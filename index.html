@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nayepankh — Get Involved</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f2e29;
+    --forest:#2c5f4a;
+    --forest-deep:#1f4636;
+    --cream:#f7f2e6;
+    --marigold:#e8a33d;
+    --clay:#c1543b;
+    --line:#dccfb2;
+    --paper:#fffdf8;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:650;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{font-family:'JetBrains Mono', monospace;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:22px 6vw;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand-mark{
+    width:34px; height:34px; border-radius:50%;
+    background:conic-gradient(var(--marigold) 0 33%, var(--clay) 33% 66%, var(--forest) 66% 100%);
+    flex-shrink:0;
+  }
+  .brand-name{font-size:1.25rem; font-weight:650;}
+  nav a{
+    margin-left:24px; color:var(--ink); text-decoration:none;
+    font-size:0.92rem; font-weight:500; border-bottom:2px solid transparent;
+    padding-bottom:4px; transition:border-color .15s;
+  }
+  nav a:hover{border-color:var(--marigold);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:64px 6vw 48px;
+    display:grid; grid-template-columns:1.3fr 1fr; gap:48px; align-items:end;
+  }
+  .hero h1{font-size:clamp(2.2rem, 4.5vw, 3.6rem); line-height:1.08;}
+  .hero h1 em{font-style:italic; color:var(--forest);}
+  .hero p{max-width:38ch; color:#4a4a3f; font-size:1.02rem;}
+  .stats{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
+  }
+  .stat{
+    background:var(--paper); border:1px solid var(--line); border-radius:10px;
+    padding:16px 14px;
+  }
+  .stat .num{font-size:1.7rem; font-weight:600; color:var(--forest-deep);}
+  .stat .label{font-size:0.78rem; text-transform:uppercase; letter-spacing:.06em; color:#8a8270; margin-top:4px;}
+
+  /* ---------- WORKFLOW SECTION ---------- */
+  .workflow{
+    padding:10px 6vw 64px;
+    display:grid; grid-template-columns:1fr 1fr; gap:40px;
+  }
+  @media (max-width: 880px){
+    .hero, .workflow{grid-template-columns:1fr;}
+  }
+
+  .panel{
+    background:var(--paper); border:1px solid var(--line); border-radius:14px;
+    padding:28px;
+  }
+  .panel h2{font-size:1.3rem; margin-bottom:4px;}
+  .panel .eyebrow{
+    font-size:0.78rem; text-transform:uppercase; letter-spacing:.08em; color:var(--clay);
+    font-weight:600; margin-bottom:6px;
+  }
+  .panel .sub{color:#6b6354; font-size:0.92rem; margin-top:6px; margin-bottom:20px;}
+
+  /* tabs */
+  .tabs{display:flex; gap:8px; margin-bottom:22px; flex-wrap:wrap;}
+  .tab{
+    border:1px solid var(--line); background:transparent; color:var(--ink);
+    padding:8px 16px; border-radius:999px; font-size:0.88rem; font-weight:500;
+    cursor:pointer; font-family:'Work Sans',sans-serif; transition:all .15s;
+  }
+  .tab[aria-selected="true"]{
+    background:var(--forest); color:var(--cream); border-color:var(--forest);
+  }
+
+  /* form */
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;}
+  .field .hint{font-size:0.78rem; color:#8a8270; margin-top:4px;}
+  input, select{
+    width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px;
+    font-family:'Work Sans',sans-serif; font-size:0.95rem; background:#fff; color:var(--ink);
+  }
+  input:focus, select:focus, .tab:focus, button:focus, .switch input:focus + .track{
+    outline:2px solid var(--marigold); outline-offset:2px;
+  }
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media (max-width:520px){.row2{grid-template-columns:1fr;}}
+
+  .submit-btn{
+    width:100%; padding:13px; border:none; border-radius:8px;
+    background:var(--forest); color:#fff; font-size:0.98rem; font-weight:600;
+    font-family:'Work Sans',sans-serif; cursor:pointer; transition:background .15s;
+    margin-top:6px;
+  }
+  .submit-btn:hover{background:var(--forest-deep);}
+
+  .gform-link{
+    display:block; text-align:center; margin-top:10px;
+    font-size:0.85rem; font-weight:600; color:var(--forest-deep);
+    text-decoration:none; border-bottom:1px dashed var(--forest-deep);
+    padding-bottom:1px; width:fit-content; margin-left:auto; margin-right:auto;
+  }
+  .gform-link:hover{color:var(--clay); border-color:var(--clay);}
+
+  /* integrations */
+  .integrations{display:flex; flex-direction:column; gap:14px; margin-bottom:24px;}
+  .integration{
+    display:flex; justify-content:space-between; align-items:center;
+    border:1px solid var(--line); border-radius:10px; padding:12px 14px; background:#fffefb;
+  }
+  .integration .ititle{font-weight:600; font-size:0.92rem;}
+  .integration .idesc{font-size:0.78rem; color:#8a8270; margin-top:2px;}
+  .switch{position:relative; width:42px; height:24px; flex-shrink:0; margin-left:12px;}
+  .switch input{position:absolute; opacity:0; width:100%; height:100%; margin:0; cursor:pointer;}
+  .switch .track{
+    position:absolute; inset:0; background:var(--line); border-radius:999px; transition:background .15s;
+  }
+  .switch .thumb{
+    position:absolute; top:3px; left:3px; width:18px; height:18px; border-radius:50%;
+    background:#fff; transition:transform .15s;
+  }
+  .switch input:checked + .track{background:var(--forest);}
+  .switch input:checked ~ .thumb{transform:translateX(18px);}
+
+  /* ledger / garland */
+  .ledger-panel{grid-column:1 / -1;}
+  .garland-wrap{position:relative; padding:34px 12px 18px; overflow-x:auto;}
+  .garland-line{
+    position:absolute; left:12px; right:12px; top:48px; height:2px;
+    background:repeating-linear-gradient(90deg, var(--line) 0 8px, transparent 8px 14px);
+  }
+  .garland{display:flex; gap:22px; min-width:max-content; position:relative; padding:0 4px;}
+  .bead{
+    width:54px; height:54px; border-radius:50%; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:1.3rem;
+    border:2px solid var(--paper); box-shadow:0 2px 6px rgba(0,0,0,.08);
+    cursor:default; transition:transform .2s;
+  }
+  .bead:hover{transform:translateY(-4px) scale(1.06);}
+  .bead.volunteer{background:var(--forest); color:#fff;}
+  .bead.donation{background:var(--marigold); color:#3a2a0a;}
+  .bead.event{background:var(--clay); color:#fff;}
+  .bead:nth-child(odd){margin-top:0;}
+  .bead:nth-child(even){margin-top:18px;}
+  .bead-empty{
+    font-size:0.85rem; color:#8a8270; padding:10px 0;
+  }
+
+  .ledger-footer{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+    margin-top:18px; padding-top:18px; border-top:1px solid var(--line);
+  }
+  .legend{display:flex; gap:18px; font-size:0.82rem; color:#6b6354; flex-wrap:wrap;}
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block;}
+  .dot.volunteer{background:var(--forest);}
+  .dot.donation{background:var(--marigold);}
+  .dot.event{background:var(--clay);}
+
+  .export-btn{
+    border:1px solid var(--forest); background:transparent; color:var(--forest-deep);
+    padding:9px 18px; border-radius:8px; font-weight:600; font-size:0.86rem;
+    cursor:pointer; font-family:'Work Sans',sans-serif; transition:all .15s;
+  }
+  .export-btn:hover{background:var(--forest); color:#fff;}
+
+  /* toast */
+  #toast{
+    position:fixed; bottom:22px; right:22px; max-width:320px;
+    background:var(--forest-deep); color:var(--cream); padding:13px 18px;
+    border-radius:10px; font-size:0.88rem; box-shadow:0 8px 24px rgba(0,0,0,.18);
+    transform:translateY(20px); opacity:0; transition:all .25s; z-index:50;
+  }
+  #toast.show{transform:translateY(0); opacity:1;}
+  #toast .tlabel{font-weight:600; display:block; margin-bottom:2px;}
+
+  footer{
+    padding:28px 6vw 40px; text-align:center; color:#8a8270; font-size:0.82rem;
+    border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true"></div>
+    <div class="brand-name">Nayepankh Organization</div>
+  </div>
+  <nav>
+    <a href="#workflow">Get involved</a>
+    <a href="#ledger">Community ledger</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Small acts, <em>woven together</em>.</h1>
+    <p>Sign up to volunteer, contribute to a programme, or join an upcoming community event — every entry below joins the same shared ledger, in real time.</p>
+  </div>
+  <div class="stats" aria-live="polite">
+    <div class="stat">
+      <div class="num mono" id="statVolunteers">128</div>
+      <div class="label">Volunteers onboard</div>
+    </div>
+    <div class="stat">
+      <div class="num mono" id="statDonations">₹4,75,000</div>
+      <div class="label">Raised this quarter</div>
+    </div>
+    <div class="stat">
+      <div class="num mono" id="statEvents">9</div>
+      <div class="label">RSVPs to events</div>
+    </div>
+  </div>
+</section>
+
+<section class="workflow" id="workflow">
+
+  <!-- FORM PANEL -->
+  <div class="panel">
+    <div class="eyebrow">Step 1 — choose how to help</div>
+    <h2>One form, three ways in</h2>
+    <p class="sub">Pick a tab, fill in your details, and submit. Your entry is added to the ledger and the impact counters update automatically.</p>
+
+    <div class="tabs" role="tablist" aria-label="Get involved options">
+      <button class="tab" role="tab" aria-selected="true" data-tab="volunteer">Volunteer</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="donation">Donate</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="event">Join an event</button>
+    </div>
+
+    <!-- Volunteer form -->
+    <form id="form-volunteer" class="form-pane">
+      <div class="row2">
+        <div class="field">
+          <label for="v-name">Full name</label>
+          <input id="v-name" required placeholder="Asha Verma">
+        </div>
+        <div class="field">
+          <label for="v-email">Email</label>
+          <input id="v-email" type="email" required placeholder="asha@email.com">
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="v-area">Area of interest</label>
+          <select id="v-area">
+            <option>Education support</option>
+            <option>Food distribution</option>
+            <option>Healthcare camps</option>
+            <option>Admin &amp; tech</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="v-avail">Availability</label>
+          <select id="v-avail">
+            <option>Weekday evenings</option>
+            <option>Weekends</option>
+            <option>Flexible / on call</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">Register as volunteer</button>
+      <a class="gform-link" href="https://forms.gle/M4MT4RB9cJKDWmHj7" target="_blank" rel="noopener">Open the official volunteer form ↗</a>
+    </form>
+
+    <!-- Donation form -->
+    <form id="form-donation" class="form-pane" hidden>
+      <div class="row2">
+        <div class="field">
+          <label for="d-name">Full name</label>
+          <input id="d-name" required placeholder="Rohan Mehta">
+        </div>
+        <div class="field">
+          <label for="d-email">Email</label>
+          <input id="d-email" type="email" required placeholder="rohan@email.com">
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="d-amount">Amount (₹)</label>
+          <input id="d-amount" type="number" min="100" step="100" required placeholder="2000">
+        </div>
+        <div class="field">
+          <label for="d-cause">Direct this towards</label>
+          <select id="d-cause">
+            <option>General fund</option>
+            <option>Daily meal programme</option>
+            <option>School kits</option>
+            <option>Medical aid</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <p class="hint">This is a demo form — no payment is processed. In a live deployment this would hand off to a payment gateway.</p>
+      </div>
+      <button type="submit" class="submit-btn">Pledge donation</button>
+      <a class="gform-link" href="https://forms.gle/Rxf3oEbpD46riB667" target="_blank" rel="noopener">Open the official donation form ↗</a>
+    </form>
+
+    <!-- Event RSVP form -->
+    <form id="form-event" class="form-pane" hidden>
+      <div class="row2">
+        <div class="field">
+          <label for="e-name">Full name</label>
+          <input id="e-name" required placeholder="Priya Nair">
+        </div>
+        <div class="field">
+          <label for="e-email">Email</label>
+          <input id="e-email" type="email" required placeholder="priya@email.com">
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="e-which">Event</label>
+          <select id="e-which">
+            <option>Sat, 27 Jun — Neighbourhood health camp</option>
+            <option>Sun, 5 Jul — School supply packing drive</option>
+            <option>Sat, 18 Jul — Tree-planting morning</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="e-count">Number attending</label>
+          <input id="e-count" type="number" min="1" max="10" value="1">
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">RSVP for event</button>
+      <a class="gform-link" href="https://forms.gle/cw62dgCtD9okXQM88" target="_blank" rel="noopener">Open the official event RSVP form ↗</a>
+    </form>
+  </div>
+
+  <!-- INTEGRATIONS PANEL -->
+  <div class="panel">
+    <div class="eyebrow">Step 2 — connected tools</div>
+    <h2>Where each entry goes</h2>
+    <p class="sub">These mirror the no-code automations behind the form. Toggle them off if you don't want that step to run on your submission.</p>
+
+    <p class="hint" style="margin-bottom:18px;">This page's forms are a live preview. The <strong>"Open the official form"</strong> link under each form goes to the real Google Form — submissions there are logged to Google Sheets and trigger live email and calendar automations via Zapier.</p>
+
+    <div class="integrations">
+      <div class="integration">
+        <div>
+          <div class="ititle">📊 Log to spreadsheet</div>
+          <div class="idesc">Every submission is appended as a new row, ready for the volunteer coordination team.</div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="int-sheet" checked>
+          <span class="track"></span><span class="thumb"></span>
+        </label>
+      </div>
+      <div class="integration">
+        <div>
+          <div class="ititle">📅 Add to calendar</div>
+          <div class="idesc">Event RSVPs and shift availability are scheduled automatically.</div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="int-cal" checked>
+          <span class="track"></span><span class="thumb"></span>
+        </label>
+      </div>
+      <div class="integration">
+        <div>
+          <div class="ititle">✉️ Send confirmation</div>
+          <div class="idesc">A short thank-you and next-steps message is queued to the email provided.</div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="int-mail" checked>
+          <span class="track"></span><span class="thumb"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="field" style="margin-bottom:0;">
+      <label>Last automation run</label>
+      <div id="autoLog" class="hint" style="font-family:'JetBrains Mono', monospace; line-height:1.7;">
+        Nothing yet — submit a form to see the workflow trigger.
+      </div>
+    </div>
+  </div>
+
+  <!-- LEDGER -->
+  <div class="panel ledger-panel" id="ledger">
+    <div class="eyebrow">Step 3 — shared ledger</div>
+    <h2>Community garland</h2>
+    <p class="sub">Each bead is one submission — hover for details. Newest entries join the right end of the string.</p>
+
+    <div class="garland-wrap">
+      <div class="garland-line" aria-hidden="true"></div>
+      <div class="garland" id="garland">
+        <div class="bead-empty">No entries yet — your submission will appear here first.</div>
+      </div>
+    </div>
+
+    <div class="ledger-footer">
+      <div class="legend">
+        <span><i class="dot volunteer"></i> Volunteer signup</span>
+        <span><i class="dot donation"></i> Donation pledge</span>
+        <span><i class="dot event"></i> Event RSVP</span>
+      </div>
+      <button class="export-btn" id="exportBtn">Export ledger as CSV</button>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  Nayepankh Organization · This page is a self-contained demo workflow — all data stays in your browser for this session.
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  // ---------- state ----------
+  let counts = { volunteers: 128, donationsTotal: 475000, eventRsvps: 9 };
+  let entries = [];
+  let nextId = 1;
+
+  const garlandEl = document.getElementById('garland');
+  const autoLogEl = document.getElementById('autoLog');
+  const toastEl = document.getElementById('toast');
+
+  // ---------- tabs ----------
+  const tabs = document.querySelectorAll('.tab');
+  const panes = {
+    volunteer: document.getElementById('form-volunteer'),
+    donation: document.getElementById('form-donation'),
+    event: document.getElementById('form-event'),
+  };
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+      tab.setAttribute('aria-selected', 'true');
+      Object.entries(panes).forEach(([key, el]) => {
+        el.hidden = (key !== tab.dataset.tab);
+      });
+    });
+  });
+
+  // ---------- helpers ----------
+  function fmtMoney(n){
+    return '₹' + n.toLocaleString('en-IN');
+  }
+
+  function showToast(title, body){
+    toastEl.innerHTML = '<span class="tlabel">' + title + '</span>' + body;
+    toastEl.classList.add('show');
+    clearTimeout(toastEl._t);
+    toastEl._t = setTimeout(() => toastEl.classList.remove('show'), 3200);
+  }
+
+  function logAutomation(name, email){
+    const lines = [];
+    const ts = new Date().toLocaleTimeString('en-IN', {hour:'2-digit', minute:'2-digit'});
+    if (document.getElementById('int-sheet').checked)
+      lines.push('[' + ts + '] ✓ row appended to spreadsheet for ' + name);
+    if (document.getElementById('int-cal').checked)
+      lines.push('[' + ts + '] ✓ calendar event scheduled');
+    if (document.getElementById('int-mail').checked)
+      lines.push('[' + ts + '] ✓ confirmation queued → ' + email);
+    if (lines.length === 0) lines.push('[' + ts + '] (all automations disabled — entry recorded only)');
+    autoLogEl.innerHTML = lines.join('<br>');
+  }
+
+  function updateStats(){
+    document.getElementById('statVolunteers').textContent = counts.volunteers.toLocaleString('en-IN');
+    document.getElementById('statDonations').textContent = fmtMoney(counts.donationsTotal);
+    document.getElementById('statEvents').textContent = counts.eventRsvps.toLocaleString('en-IN');
+  }
+
+  const ICONS = { volunteer: '🤝', donation: '🌼', event: '📅' };
+
+  function addEntry(type, name, detail){
+    const entry = { id: nextId++, type, name, detail, time: new Date().toLocaleString('en-IN') };
+    entries.push(entry);
+
+    if (entries.length === 1) garlandEl.innerHTML = '';
+
+    const bead = document.createElement('div');
+    bead.className = 'bead ' + type;
+    bead.textContent = ICONS[type];
+    bead.title = name + ' — ' + detail;
+    garlandEl.appendChild(bead);
+    garlandEl.parentElement.scrollLeft = garlandEl.scrollWidth;
+  }
+
+  // ---------- form handlers ----------
+  document.getElementById('form-volunteer').addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('v-name').value.trim();
+    const email = document.getElementById('v-email').value.trim();
+    const area = document.getElementById('v-area').value;
+    const avail = document.getElementById('v-avail').value;
+    if (!name || !email) return;
+
+    counts.volunteers += 1;
+    updateStats();
+    addEntry('volunteer', name, area + ' · ' + avail);
+    logAutomation(name, email);
+    showToast('Volunteer registered', name + ' added to the ' + area.toLowerCase() + ' roster.');
+    e.target.reset();
+  });
+
+  document.getElementById('form-donation').addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('d-name').value.trim();
+    const email = document.getElementById('d-email').value.trim();
+    const amount = parseFloat(document.getElementById('d-amount').value);
+    const cause = document.getElementById('d-cause').value;
+    if (!name || !email || !amount || amount <= 0) return;
+
+    counts.donationsTotal += amount;
+    updateStats();
+    addEntry('donation', name, fmtMoney(amount) + ' · ' + cause);
+    logAutomation(name, email);
+    showToast('Donation pledged', fmtMoney(amount) + ' from ' + name + ' towards ' + cause.toLowerCase() + '.');
+    e.target.reset();
+    document.getElementById('e-count') && (document.getElementById('e-count').value = 1);
+  });
+
+  document.getElementById('form-event').addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('e-name').value.trim();
+    const email = document.getElementById('e-email').value.trim();
+    const which = document.getElementById('e-which').value;
+    const count = parseInt(document.getElementById('e-count').value, 10) || 1;
+    if (!name || !email) return;
+
+    counts.eventRsvps += count;
+    updateStats();
+    addEntry('event', name, which.split('—')[1].trim() + ' · ' + count + ' attending');
+    logAutomation(name, email);
+    showToast('RSVP confirmed', name + ' is down for ' + count + ' at: ' + which.split('—')[1].trim());
+    e.target.reset();
+    document.getElementById('e-count').value = 1;
+  });
+
+  // ---------- export ----------
+  document.getElementById('exportBtn').addEventListener('click', () => {
+    if (entries.length === 0){
+      showToast('Nothing to export', 'Submit at least one form first.');
+      return;
+    }
+    const header = 'id,type,name,detail,time\n';
+    const rows = entries.map(en =>
+      [en.id, en.type, '"' + en.name.replace(/"/g,'""') + '"', '"' + en.detail.replace(/"/g,'""') + '"', en.time].join(',')
+    ).join('\n');
+    const blob = new Blob([header + rows], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'nayepankh-ledger.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast('Exported', entries.length + ' entries downloaded as CSV.');
+  });
+
+  updateStats();
+</script>
+
+</body>
+</html>
