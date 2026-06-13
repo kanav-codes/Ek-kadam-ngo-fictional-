@@ -4,8 +4,7 @@ A no-code engagement webpage and workflow for an NGO, covering volunteer
 recruitment, donations, and event participation in a single connected page.
 
 ## Live Demo
-https://kanav-codes.github.io/Ek kadam-ngo/
-
+https://kanav-codes.github.io/Ek-kadam-ngo-fictional-/
 ## Features
 
 - **Landing page** with live impact stats: volunteers onboard, funds raised,
